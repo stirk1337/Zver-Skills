@@ -12,6 +12,8 @@ import ast
 import re
 import json
 
+def test(request, test_id):
+    return render(request, 'tests/test.html')
 
 def browse(request):
     return render(request, 'tests/browse.html')
