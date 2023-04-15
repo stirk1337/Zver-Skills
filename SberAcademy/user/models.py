@@ -8,6 +8,7 @@ class UserAccount(models.Model):
     group = models.CharField(max_length=30, choices=[('Соискатель', 'Соискатель'), ('Ментор', 'Ментор'), ('Работодатель', 'Работодатель'), ('Заказчик', 'Заказчик')])
     contacts = models.CharField(max_length=20)
     description = models.TextField(max_length=200)
+    mentor_spec = models.CharField(max_length=100, default='')
     
 class Skill(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE) 
