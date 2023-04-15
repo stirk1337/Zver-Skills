@@ -1,0 +1,36 @@
+<head>
+    <meta charset='utf-8'>
+    <title>{% block title %}{% endblock %}</title>
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+  
+    <div class="login-form">
+      <div class="logo">
+        <img src="/static/img/logo.svg">
+      </div>
+      <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+          <p>Логин</p>
+          <div class="input-container">
+            <img class="icon-login" src="/static/img/icon-login.svg">
+            <input type="text" name="username" required id="id_username" placeholder="Введите логин">
+          </div>
+          <p>Пароль</p>
+          <div class="input-container">
+            <img class="icon-lock" src="/static/img/icon-lock.svg">
+            <input type="password" name="password" required id="current-password" placeholder="Введите пароль">
+          </div>
+  
+          {% if form.errors %}
+          <span>Неверный логин или пароль. Попробуйте снова.</span>
+          {% endif %}
+        
+          <input class="submit" type="submit" value="Войти" />
+          <input type="hidden" name="next" value="{{ next }}" />
+        </form>
+    </div>
+  </body>
