@@ -26,6 +26,7 @@ def browse_tests(request):
 def get_tests_by_filter(request):
     #block = request.GET.get('block')
     tests = Test.objects.all()
+    tests = tests.filter(random=False)
     data = list(tests.values())
     for i, test in enumerate(tests):
         test_result = test.testresult_set.all()
