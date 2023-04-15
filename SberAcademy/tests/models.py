@@ -1,7 +1,8 @@
 from django.db import models
 
 class Test(models.Model):
-    difficulty = models.CharField(choices=[('Легкая', 'Легкая'), ('Средняя', 'Средняя'), ('Сложная', 'Сложная')], max_length=15)
+    name = models.CharField(max_length=100, default='')
+    description = models.CharField(max_length=100, default='')
     skill = models.CharField(max_length=20)
 
 class Question(models.Model):
@@ -11,3 +12,6 @@ class Question(models.Model):
     false1 = models.CharField(max_length=100)
     false2 = models.CharField(max_length=100)
     false3 = models.CharField(max_length=100)
+
+class Task(Test):
+    difficulty = models.CharField(choices=[('Легкая', 'Легкая'), ('Средняя', 'Средняя'), ('Сложная', 'Сложная')], max_length=15)
