@@ -8,6 +8,6 @@ urlpatterns = [
     path('get_tasks', views.get_tasks_by_filter),
     path('get_test', views.get_test),
     path('complete_test', views.complete_test),
-    path('test/<int:test_id>', views.test)
+    path('test/<int:vacancy_id>', views.test)
     
 ]
