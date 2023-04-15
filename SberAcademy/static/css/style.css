@@ -105,6 +105,38 @@ p{
 
 .task-filter{
     width: 20%;
+    padding: 15px 15px 0 12px;
+    box-sizing: border-box;
+}
+
+.task-filter p, .task-filter div{
+    margin-bottom: 14px;
+}
+
+.task-filter p{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.search-input{
+    font-family: 'Montserrat';
+    font-size: 17px;
+    border: 1px solid #000000;
+    border-radius: 7px;
+    padding: 5px 0px 5px 30px;
+    box-sizing: border-box;
+    width: 90%;
+    height: 29px;
+}
+
+.search{
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.search-icon{
+    position: absolute;
+    margin: 5px;
 }
 
 .tasks-list{
@@ -135,15 +167,15 @@ p{
     border-bottom: 1px solid #D0D0CE;
 }
 
-#task-name{
+.task-name{
     width: 402px;
 }
 
-#task-module{
+.task-module{
     width: 358px;
 }
 
-#task-difficulty{
+.task-difficulty{
     margin-right: 375px;
 }
 
@@ -163,8 +195,12 @@ p{
 }
 
 .undone{
-    background: #F9CFCF;
-    color: #FF3E3E !important;
+    background: #E2E2E2;
+    color: #7C7C7C !important;
+}
+
+.easy, .normal, .hard{
+    font-weight: bold;
 }
 
 .easy{

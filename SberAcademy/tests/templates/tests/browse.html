@@ -5,6 +5,26 @@
 {% block content %}
     <div class="task-content">
         <div class="task-filter">
+            <p>Задачи</p>
+            <div class="search-filter">
+                <img class="search-icon" src="/static/img/search.svg">
+                <input class="search-input" placeholder="Поиск">
+            </div>
+            <p>Модули</p>
+            <div class="skills-filter">
+                <span>Python</span>
+            </div>
+            <p>Сложности</p>
+            <div class="difficulty-filter">
+                <span class="easy">Легкая</span>
+                <span class="normal">Средняя</span>
+                <span class="hard">Сложная</span>
+            </div>
+            <p>Статус решения</p>
+            <div class="is-done-filter">
+                <span class="done">Решено</span>
+                <span class="undone">Не решено</span>
+            </div>
         </div>
         <div class="tasks-list">
             <div class="tasks-sort">
@@ -13,18 +33,7 @@
                 <p>Сложность</p>
                 <p>Статус решения</p>
             </div>
-            <div class="task">
-                <p id="task-name">Пятый поезд</p>
-                <p id="task-module">SQL</p>
-                <p id="task-difficulty" class="easy">Легко</p>
-                <p id="task-is-complete" class="done">Решено</p>
-            </div>
-            <div class="task">
-                <p id="task-name">Пятый поезд</p>
-                <p id="task-module">SQL</p>
-                <p id="task-difficulty" class="easy">Легко</p>
-                <p id="task-is-complete" class="undone">Не решено</p>
-            </div>
         </div>
     </div>
+    <script type="module" src="/static/js/tasks.js"></script>
 {% endblock %}
