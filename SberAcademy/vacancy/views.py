@@ -5,13 +5,16 @@ from django.http import JsonResponse, HttpResponse
 from django.forms.models import model_to_dict
 import random
 import ast
+from django.contrib.auth.models import User
 # Create your views here.
 def browse(request):
     return render(request, 'vacancy/vacancy.html')
 
 def get_vacancies(request):
-    vac = Vacancy.objects.all()
-    vac = list(vac.values())
+    vacancies = Vacancy.objects.all()
+    vacancies = list(vacancies.values())
+    for vac in vacancies:
+        vac['name'] = User.objects.get(id=vac['user_id']).username
     return JsonResponse(vac, safe=False)
 
 def test(request, vacancy_id):

@@ -6,6 +6,8 @@ class Vacancy(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=250)
     description = models.CharField(max_length=250, default='')
+    company = models.CharField(max_length=250, default='ЗВЕР')
+    city = models.CharField(max_length=250, default='Зверебург')
 
 class Skill(models.Model):
     vacancy = models.ForeignKey(Vacancy, on_delete=models.CASCADE)
