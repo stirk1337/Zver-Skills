@@ -59,11 +59,14 @@ def get_test(request):
 
 @login_required(login_url='/user/login/')
 def complete_test(request):
-    test = Test.objects.get(id=request.POST.get('test_id'))
-    answers = request.POST.get('answers')
+    test = Test.objects.get(id=request.GET.get('test_id'))
+    answers = request.GET.get('answers')
+    print(list(answers))
     test_dict = model_to_dict(test)
     questions = test.question_set.all()
-    test_dict['questions'] = []
-    for q in questions:
-        print(q)
-    return JsonResponse(test_dict)
+    rights = 0
+    for i, q in enumerate(questions):
+        if q.right == answers[i]:
+            rights =+ 1
+    points = rights // len(questions)
+    return JsonResponse(points)
