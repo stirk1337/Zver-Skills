@@ -93,8 +93,88 @@ p{
     position: absolute;
     width: 87px;
     height: 0px;
-    left: 435px;
+    left: 26%;
     top: 74px;
 
     border: 1px solid #000000;
+}
+
+.task-content{
+    display: flex;
+}
+
+.task-filter{
+    width: 20%;
+}
+
+.tasks-list{
+    width: 80%;
+}
+
+.tasks-sort{
+    width: 100%;
+    box-sizing: border-box;
+    height: 47px;
+    display: flex;
+    justify-content: space-between;
+    background: #EBEBEB;
+    padding: 14px 57px 14px 57px;
+}
+
+.tasks-list p{
+    font-family: 'Montserrat';
+    font-size: 14px;
+    color: #6A6A65;
+}
+
+.task{
+    box-sizing: border-box;
+    height: 47px;
+    display: flex;
+    padding: 14px 57px 14px 57px;
+    border-bottom: 1px solid #D0D0CE;
+}
+
+#task-name{
+    width: 402px;
+}
+
+#task-module{
+    width: 358px;
+}
+
+#task-difficulty{
+    margin-right: 375px;
+}
+
+.done, .undone{
+    font-weight: bold;
+    margin: 0 auto;
+    box-sizing: border-box;
+    height: 24px;
+    padding: 5px 6px 5px 6px;
+    font-size: 12px !important;
+    border-radius: 50px;
+}
+
+.done{
+    background: #E5F5E4;
+    color: #3F8B35 !important;
+}
+
+.undone{
+    background: #F9CFCF;
+    color: #FF3E3E !important;
+}
+
+.easy{
+    color: #66E76B !important;
+}
+
+.normal{
+    color: #E7DA66 !important;
+}
+
+.hard{
+    color: #E76666 !important;
 }
