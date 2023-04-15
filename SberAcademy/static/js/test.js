@@ -22,6 +22,8 @@ function getTests() {
     let threeContainer = ''
     for (let index = 0; index < data.length; index++) {
         let test = $("<div class='test'></div>")
+        test.attr('id', data[index].id)
+        test.attr('href', '/test/' + data[index].id)
         test.append($("<p class='test-name'></p>").text(data[index].name))
         test.append($("<p class='test-description'></p>").text(data[index].description))
         if(index % 3 == 0){
@@ -37,3 +39,7 @@ function getTests() {
         }
     }
 }
+
+$(document).on('click', '.test', function(e){
+    window.location.replace('test/' + e.currentTarget.id)
+})

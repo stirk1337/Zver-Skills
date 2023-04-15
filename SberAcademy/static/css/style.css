@@ -257,3 +257,143 @@ p{
 .container-three .test:nth-child(3n){
     background: #13871F;
 }
+
+.open-test-container, .open-test-footer, .open-test-time, .open-test-answers{
+    display: flex;
+}
+
+.about-test{
+    width: 60%;
+}
+
+.open-test-footer{
+    justify-content: space-between;
+}
+
+.open-test{
+    font-family: 'Montserrat';
+}
+
+.open-test-container img{
+    width: 40%;
+}
+
+.open-test-name{
+    margin-top: 57px;
+    font-size: 46px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.open-test-description{
+    position: fixed;
+    margin-left: 87px;
+    width: 722px;
+    margin-top: 159px;
+    font-size: 30px;
+}
+
+.open-test-footer{
+    margin-top: 631px;
+    margin-left: 80px;
+}
+
+.open-test-time img, .open-test-answers img{
+    width: 35px;
+    height: 35px;
+}
+
+.open-test-time p, .open-test-answers p{
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.start-test,.submit-test{
+    box-sizing: border-box;
+    width: 153px;
+    height: 57px;
+    font-size: 27px;
+
+    background: #13871F;
+    border-radius: 17px;
+    color: white;
+    padding: 13px 28px 13px 28px;
+}
+
+.submit-test{
+    box-sizing: content-box;
+    height: auto;
+    margin-left: auto;
+}
+
+.test-field{
+    position: relative;
+    font-weight: bold;
+    margin: 0 auto;
+    margin-top: 106px;
+    width: 856px;
+}
+
+.question{
+    font-size: 25px;
+    text-align: center;
+}
+
+.variants{
+    width: 726px;
+    margin: 0 auto;
+    margin-top: 61px;
+}
+
+.variants p{
+    box-sizing: border-box;
+    font-size: 20px;
+    min-height: 59px;
+    text-align: center;
+    padding-top: 20px;
+    background: #FAFAFA;
+    margin-bottom: 14px;
+}
+
+
+.question-select{
+    position: absolute;
+    left: 700px;
+    top: 0;
+    width: 330px;
+    margin-left: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.question-select div{
+    box-sizing: border-box;
+    font-size: 30px;
+    font-weight: 400;
+    width: 54px;
+    height: 54px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.35);
+    border-radius: 6px;
+    text-align: center;
+    padding: 10px 0 10px 0;
+}
+
+.question-select .active{
+    background: #FFFFFF;
+    border: 3px solid rgba(0, 0, 0, 0.66);
+    border-radius: 6px;
+}
+
+.choiced{
+    background: rgba(62, 195, 87, 0.44) !important;
+}
+
+.task-choiced{
+    background: #B8FC8D !important;
+}
+
+.hidden{
+    display: none;
+}
