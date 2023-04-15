@@ -5,6 +5,7 @@ from django.http import JsonResponse, HttpResponse
 from django.forms.models import model_to_dict
 import random
 import ast
+from user.models import Notification
 from django.contrib.auth.models import User
 # Create your views here.
 def browse(request):
@@ -109,11 +110,31 @@ def complete_test(request):
 
     for key,val in rights_dict.items():
         rights_dict[key] = int(val / all_skills_dict[key]) * 100
-    #points = int(rights / len(questions) * 100)
-    survey = Survey(vacancy=Vacancy.objects.get(id=request.GET.get('vacancy_id')), user=request.user)
+    points = int(rights / len(questions) * 100)
+    survey = Survey(vacancy=Vacancy.objects.get(id=request.GET.get('vacancy_id')), user=request.user, points = points)
     survey.save()
     for key,val in rights_dict.items():
         skill_point = SkillResult(skill=key, points=val, survey=survey)
         skill_point.save()
 
     return JsonResponse(rights_dict, safe=False)
+
+def get_surveys(request):
+    surveys = Survey.objects.all()
+    surv = list(surveys.values())
+    for i, vac in enumerate(surv):
+        vac['name'] = User.objects.get(id=vac['user_id']).username
+    return JsonResponse(surv, safe=False)
+
+def delete_survey(request):
+    survey = Survey.objects.get(id=request.GET.get('survey_id'))
+    survey.delete()
+
+def mentor_survey(request):
+    survey = Survey.objects.get(id=request.GET.get('survey_id'))
+    user = User.objects.get(id=2)
+    print(user)
+    notifi = Notification()
+
+
+    

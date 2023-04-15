@@ -16,6 +16,7 @@ class Skill(models.Model):
 class Survey(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     vacancy = models.ForeignKey(Vacancy, on_delete=models.CASCADE)
+    points = models.IntegerField(default=60)
 
 class SkillResult(models.Model):
     skill = models.CharField(max_length=100)
