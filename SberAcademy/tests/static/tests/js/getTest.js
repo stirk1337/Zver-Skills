@@ -1,4 +1,6 @@
-let id = window.location.href[window.location.href.length - 1]
+let id = window.location.href.split('/')[5]
+let testid = ''
+let type = window.location.href.split('/')[3]
 
 function request(type, url, data){
     let returnData = ''
@@ -21,7 +23,15 @@ let answers = []
 getTest(id)
 
 function getTest(id){
-    test = request('GET', '/test/get_test', {test_id: id})
+    console.log(type)
+    if(type == 'vacancy'){
+        test = request('GET', '/vacancy/test_vac', {vacancy_id: id})
+        testid = test.id
+    }
+    else{
+        test = request('GET', '/test/get_test', {test_id: id})
+    }
+    console.log(test)
     $('.open-test-name').text('Тест на ' + test.name)
     $('.open-test-description').text(test.description)
     $('.open-test-answers p').text(test.questions.length + ' вопросов')
@@ -87,7 +97,20 @@ $(document).on('click', '.submit-test', function(e){
         sendArray.push(element[1])
     });
     console.log(sendArray)
-    request('GET', '/test/complete_test', {test_id: id, answers: sendArray.join(',')})
+    let mark = ''
+    if(type == 'vacancy'){
+        mark = request('GET', '/vacancy/complete_test', {test_id: testid, vacancy_id: id, answers: sendArray.join(',')})
+        for(var key in mark){
+            $('.mark').append($("<p></p>").text('Ваш балл ' + key + ': ' + mark[key]))
+        }
+        $('.mark').append($("<p></p>").text('Ваша анкета была отправлена'))
+    }
+    else{
+        mark = request('GET', '/test/complete_test', {test_id: id, answers: sendArray.join(',')})
+        $('.mark').text('Ваш балл: ' + mark)
+    }
+    $('.test-field').addClass('hidden')
+    $('.submit-test').addClass('hidden')
 })
 
 

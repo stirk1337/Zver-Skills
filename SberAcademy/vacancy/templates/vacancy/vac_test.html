@@ -3,5 +3,40 @@
 {% block title %}Тест{% endblock %}
 
 {% block content %}
-
+<div class="open-test">
+    <p class="open-test-name"></p>
+    <div class="open-test-container">
+        <img class="open-test-img" src="/static/img/test.png">
+        <div class="about-test">
+            <p class="open-test-description"></p>
+            <div class="open-test-footer">
+                <div class="open-test-limites">
+                    <div class="open-test-time">
+                        <img src='/static/img/time.svg'>
+                        <p>45 минут</p>
+                    </div>
+                    <div class="open-test-answers">
+                        <img src='/static/img/answers.svg'>
+                        <p></p>
+                    </div>
+                </div>
+                <p class="start-test">Начать</p>
+            </div>
+        </div>
+    </div>
+    <div class="test-field hidden">
+        <p class="question"></p>
+        <div class="variants">
+            <p id="1"></p>
+            <p id="2"></p>
+            <p id="3"></p>
+            <p id="4"></p>
+        </div>
+        <div class="question-select">
+        </div>
+    </div>
+    <p class="submit-test hidden">Закончить</p>
+    <p class="mark"></p>
+</div>
+<script type="module" src="/static/tests/js/getTest.js"></script>
 {% endblock %}
