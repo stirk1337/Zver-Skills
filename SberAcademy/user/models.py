@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from tests.models import Test, Task
 from django.core.validators import MaxValueValidator, MinValueValidator
 
-class User(models.Model):
+class UserAccount(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     group = models.CharField(max_length=30, choices=[('Соискатель', 'Соискатель'), ('Ментор', 'Ментор'), ('Работодатель', 'Работодатель'), ('Заказчик', 'Заказчик')])
     contacts = models.CharField(max_length=20)

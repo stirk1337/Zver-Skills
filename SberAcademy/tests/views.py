@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Test, Task
+from user.models import TaskResult, TestResult
 from django.contrib.auth.models import User
 import datetime
 from datetime import datetime
@@ -17,16 +18,52 @@ def browse(request):
 def get_tests_by_filter(request):
     #block = request.GET.get('block')
     tests = Test.objects.all()
+    data = list(tests.values())
+    for i, test in enumerate(tests):
+        test_result = test.testresult_set.all()
+        if len(test_result) > 0:
+            test_result = test_result.get(user=request.user)
+            data[i]['result'] = test_result.result
+        else:
+            data[i]['result'] = None
     #if block:
     #    goals = goals.filter(block=block)
-    data = list(tests.values())
     return JsonResponse(data, safe=False)
 
 @login_required(login_url='/user/login/')
 def get_tasks_by_filter(request):
     #block = request.GET.get('block')
     tasks = Task.objects.all()
+    data = list(tasks.values())
+    for i, task in enumerate(tasks):
+        task_result = task.taskresult_set.all()
+        if len(task_result) > 0:
+            task_result = task_result.get(user=request.user)
+            data[i]['result'] = task_result.result
+        else:
+            data[i]['result'] = None
     #if block:
     #    goals = goals.filter(block=block)
-    data = list(tasks.values())
     return JsonResponse(data, safe=False)
+
+@login_required(login_url='/user/login/')
+def get_test(request):
+    test = Test.objects.get(id=request.GET.get('test_id'))
+    test_dict = model_to_dict(test)
+    questions = test.question_set.all()
+    questions = questions.values('question', 'opt1', 'opt2', 'opt3', 'opt4')
+    test_dict['questions'] = []
+    for q in questions:
+        test_dict['questions'].append(q)
+    return JsonResponse(test_dict)
+
+@login_required(login_url='/user/login/')
+def complete_test(request):
+    test = Test.objects.get(id=request.POST.get('test_id'))
+    answers = request.POST.get('answers')
+    test_dict = model_to_dict(test)
+    questions = test.question_set.all()
+    test_dict['questions'] = []
+    for q in questions:
+        print(q)
+    return JsonResponse(test_dict)
