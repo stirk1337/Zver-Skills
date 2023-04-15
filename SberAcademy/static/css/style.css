@@ -125,7 +125,7 @@ p{
     border-radius: 7px;
     padding: 5px 0px 5px 30px;
     box-sizing: border-box;
-    width: 90%;
+    width: 250px;
     height: 29px;
 }
 
@@ -213,4 +213,47 @@ p{
 
 .hard{
     color: #E76666 !important;
+}
+
+.test-content{
+    width: 1399px;
+    margin: 0 auto;
+    margin-top: 32px;
+}
+
+.test-content p{
+    font-size: 25px;
+    margin-bottom: 22px;
+}
+
+.test-cards{
+    margin-top: 15px;
+    font-size: 23px;
+    color: white;
+}
+
+.test{
+    box-sizing: border-box;
+    box-shadow: 2px 2px 4px 3px rgba(0, 0, 0, 0.25);
+    padding: 16px 16px 0 30px;
+    border-radius: 2px;
+    width: 431px;
+}
+
+.container-three{
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.container-three .test:nth-child(n){
+    background: #67DF73;
+}
+
+.container-three .test:nth-child(2n){
+    background: #19C349;
+}
+
+.container-three .test:nth-child(3n){
+    background: #13871F;
 }
