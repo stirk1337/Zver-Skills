@@ -18,6 +18,7 @@ getTests()
 
 function getTests() {
     let data = request('GET', '/test/get_tests')
+    console.log(data)
     let testContainer = $('.test-cards')
     let threeContainer = ''
     for (let index = 0; index < data.length; index++) {

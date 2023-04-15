@@ -31,6 +31,7 @@ def get_vacancies(request):
 def test_vac(request):
     vac = Vacancy.objects.get(id=request.GET.get('vacancy_id'))
     skills = vac.skill_set.all()
+    print(skills)
     q_list = []
     test_xd = Test(name='На вакансию ' + vac.name, random=True, skill='Net', description='Тест оценит ваши знания на вакансию ' + vac.name )
     test_xd.save()
@@ -96,6 +97,7 @@ def complete_test(request):
     rights_dict = {}
     all_skills_dict = {}
     for i, q in enumerate(questions):
+        print(q.skill)
         if q.skill not in rights_dict:
             rights_dict[q.skill] = 0
         if q.skill not in all_skills_dict:
