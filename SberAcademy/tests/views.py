@@ -13,7 +13,8 @@ import re
 import json
 
 def test(request, test_id):
-    return render(request, 'tests/test.html')
+    test = Test.objects.get(id=test_id)
+    return render(request, 'tests/test.html', {'test': test})
 
 def browse(request):
     return render(request, 'tests/browse.html')
