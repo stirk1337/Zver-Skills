@@ -74,6 +74,7 @@ def complete_test(request):
         if str(q.right) == str(answers[i]):
             rights =+ 1
     points = int(rights / len(questions) * 100)
-    test_result = TestResult(user=request.user, test=test, result=points)
-    test_result.save()
+    if len(test.testresult_set.all().filter(user=request.user)) == 0:
+        test_result = TestResult(user=request.user, test=test, result=points)
+        test_result.save()
     return JsonResponse(points, safe=False)
