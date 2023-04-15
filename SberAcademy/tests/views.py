@@ -8,7 +8,9 @@ from django.http import JsonResponse, HttpResponse
 from django.forms.models import model_to_dict
 from django.contrib.auth.decorators import login_required
 import math
+import ast
 import re
+import json
 
 
 def browse(request):
@@ -61,12 +63,13 @@ def get_test(request):
 def complete_test(request):
     test = Test.objects.get(id=request.GET.get('test_id'))
     answers = request.GET.get('answers')
-    print(list(answers))
+    answers = ast.literal_eval(answers)
     test_dict = model_to_dict(test)
     questions = test.question_set.all()
     rights = 0
     for i, q in enumerate(questions):
-        if q.right == answers[i]:
+        if str(q.right) == str(answers[i]):
             rights =+ 1
-    points = rights // len(questions)
-    return JsonResponse(points)
+    points = int(rights / len(questions) * 100)
+    test_result = TestResult(user=request.user, test=test_id)
+    return JsonResponse(points, safe=False)
