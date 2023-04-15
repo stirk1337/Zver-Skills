@@ -27,9 +27,12 @@ def get_vacancies(request):
         vac['skills'] = vac_skills[i]
     return JsonResponse(vacancies, safe=False)
 
-def test(request, vacancy_id):
-    vac = Vacancy.objects.get(id=vacancy_id)
+def test_vac(request):
+    vac = Vacancy.objects.get(request.GET.get('vacancy_id'))
     return JsonResponse(model_to_dict(vac))
+
+def test(request, vacancy_id):
+    return render(request, 'vacancy/vac_test.html')
 
 def start_test(request):
     vac = Vacancy.objects.get(id=request.GET.get('vacancy_id'))
