@@ -48,8 +48,7 @@ def start_test(request):
 
 def complete_test(request):
     test = Test.objects.get(id=request.GET.get('test_id'))
-    answers = request.GET.get('answers')
-    answers = ast.literal_eval(answers)
+    answers = request.GET.get('answers').split(',')
     test_dict = model_to_dict(test)
     questions = test.question_set.all()
     rights = 0
@@ -65,8 +64,10 @@ def complete_test(request):
                 rights_dict[q.skill] = 1
             else:
                 rights_dict[q.skill] += 1
-    for key,val in rights_dict:
-        val = int(val / all_skills_dict[key] * 100)
+    print(rights_dict)
+    print(all_skills_dict)
+    for key,val in rights_dict.items():
+        rights_dict[key] = int(val / all_skills_dict[key]) * 100
     #points = int(rights / len(questions) * 100)
     print(rights_dict)
-    return JsonResponse(points, safe=False)
+    return JsonResponse(rights_dict, safe=False)
