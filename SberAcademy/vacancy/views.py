@@ -12,12 +12,19 @@ def browse(request):
 
 def get_vacancies(request):
     vacancies = Vacancy.objects.all()
+    vac_skills = []
     for vac in vacancies:
         skills = vac.skill_set.all()
+        ski = list(skills.values('skill'))
+        skillings = []
+        for s in ski:
+            skillings.append(s['skill'])
+        vac_skills.append(skillings)
     vacancies = list(vacancies.values())
     
-    for vac in vacancies:
+    for i, vac in enumerate(vacancies):
         vac['name'] = User.objects.get(id=vac['user_id']).username
+        vac['skills'] = vac_skills[i]
     return JsonResponse(vacancies, safe=False)
 
 def test(request, vacancy_id):
