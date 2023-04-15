@@ -68,8 +68,7 @@ def get_test(request):
 @login_required(login_url='/user/login/')
 def complete_test(request):
     test = Test.objects.get(id=request.GET.get('test_id'))
-    answers = request.GET.get('answers')
-    answers = ast.literal_eval(answers)
+    answers = request.GET.get('answers').split(',')
     test_dict = model_to_dict(test)
     questions = test.question_set.all()
     rights = 0
