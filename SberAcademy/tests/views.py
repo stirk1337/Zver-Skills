@@ -16,6 +16,9 @@ import json
 def browse(request):
     return render(request, 'tests/browse.html')
 
+def browse_tests(request):
+    return render(request, 'tests/browse_tests.html')
+
 @login_required(login_url='/user/login/')
 def get_tests_by_filter(request):
     #block = request.GET.get('block')
@@ -71,5 +74,6 @@ def complete_test(request):
         if str(q.right) == str(answers[i]):
             rights =+ 1
     points = int(rights / len(questions) * 100)
-    test_result = TestResult(user=request.user, test=test_id)
+    test_result = TestResult(user=request.user, test=test, result=points)
+    test_result.save()
     return JsonResponse(points, safe=False)
