@@ -5,8 +5,9 @@ class Test(models.Model):
     skill = models.CharField(max_length=20)
 
 class Question(models.Model):
-    test = models.OneToOneField(Test, on_delete=models.CASCADE, primary_key=True)
-    true1 = models.CharField(max_length=20)
-    false2 = models.CharField(max_length=20)
-    false2 = models.CharField(max_length=20)
-    false3 = models.CharField(max_length=20)
+    test = models.ForeignKey(Test, on_delete=models.CASCADE)
+    question = models.CharField(max_length=100)
+    true1 = models.CharField(max_length=100)
+    false1 = models.CharField(max_length=100)
+    false2 = models.CharField(max_length=100)
+    false3 = models.CharField(max_length=100)
