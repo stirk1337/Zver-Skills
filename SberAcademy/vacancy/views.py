@@ -95,6 +95,8 @@ def complete_test(request):
     rights_dict = {}
     all_skills_dict = {}
     for i, q in enumerate(questions):
+        if q.skill not in rights_dict:
+            rights_dict[q.skill] = 0
         if q.skill not in all_skills_dict:
             all_skills_dict[q.skill] = 1
         else:
