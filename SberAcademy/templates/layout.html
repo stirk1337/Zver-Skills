@@ -11,6 +11,22 @@
 </head>
 
 <body>
+    <header>
+        <div class="logo">
+            <a class="Задачи" href="/">Академия</a>
+        </div>
+        <div class="header-nav">
+            <a class="Задачи" href="/">Задачи</a>
+            <a class="Добавить" href="/goal/add">Тесты</a>
+            <a class="Утвердить" href="/goal/approve">Вакансии</a>
+        </div>
+        <div class="header-user">
+            <a class="Сводка" href="/goal/summary">Еженедельный кейс</a>
+            <p>{{ user }}</p>
+            <img class="user-logo" src="/static/img/user-logo.png">
+        </div>
+        <div class="nav-line"></div>
+    </header>
     {% block content %}
 
     {% endblock %}

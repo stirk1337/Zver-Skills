@@ -1,0 +1,100 @@
+@font-face {
+	font-family: "SbSans";
+	src: url("/static/fonts/SBSansDisplay-Regular.eot");
+	src: url("/static/fonts/SBSansDisplay-Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+		url("/static/fonts/SBSansDisplay-Regular.svg") format("svg"), /* Legacy iOS */
+		url("/static/fonts/SBSansDisplay-Regular.ttf") format("truetype"), /* Safari, Android, iOS */
+		url("/static/fonts/SBSansDisplay-Regular.woff") format("woff"), /* Modern Browsers */
+		url("/static/fonts/SBSansDisplay-Regular.woff2") format("woff2"); /* Modern Browsers */
+	
+    font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "SbSans";
+	src: url("/static/fonts/SBSansDisplay-Bold.eot");
+	src: url("/static/fonts/SBSansDisplay-Bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+		url("/static/fonts/SBSansDisplay-Bold.svg") format("svg"), /* Legacy iOS */
+		url("/static/fonts/SBSansDisplay-Bold.ttf") format("truetype"), /* Safari, Android, iOS */
+		url("/static/fonts/SBSansDisplay-Bold.woff") format("woff"), /* Modern Browsers */
+		url("/static/fonts/SBSansDisplay-Bold.woff2") format("woff2"); /* Modern Browsers */
+	
+    font-weight: bold;
+	font-style: normal;
+}
+
+
+body{
+    max-width: 1740px;
+    margin: 0 auto;
+    font-family: 'SbSans';
+}
+
+header{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    height: 74px;
+    box-sizing: border-box;
+    padding: 11px 34px 10px 34px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+a{
+    text-decoration: none;
+}
+
+p{
+    margin: 0;
+}
+
+.logo a{
+    font-weight: 700;
+    font-size: 32px;
+    color: #209F38;
+}
+
+.logo{
+    margin-top: 4px;
+}
+
+.header-nav a, .header-user p, .header-user a{
+    font-size: 25px;
+    color: black;
+}
+
+.header-nav, .header-user p, .header-user a{
+    margin-top: 10px;
+}
+
+.header-user p{
+    margin-right: 14px;
+}
+
+.header-nav a, .header-user a{
+    margin-right: 52px;
+}
+
+.header-nav a:nth-last-child(1){
+    margin-right: 0;
+}
+
+.header-user{
+    display: flex;
+}
+
+.user-logo{
+    width: 52px;
+    height: 52px;
+}
+
+.nav-line{
+    position: absolute;
+    width: 87px;
+    height: 0px;
+    left: 435px;
+    top: 74px;
+
+    border: 1px solid #000000;
+}
