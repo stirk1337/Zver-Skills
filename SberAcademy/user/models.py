@@ -23,3 +23,9 @@ class TaskResult(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     task = models.ForeignKey(Task, on_delete=models.CASCADE)
     result = models.BooleanField(default=False)
+
+class Notification(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    is_read = models.BooleanField(default=False)
+    
+    timestamp = models.DateTimeField(auto_now_add=True)
