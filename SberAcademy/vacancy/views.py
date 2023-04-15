@@ -28,7 +28,7 @@ def get_vacancies(request):
     return JsonResponse(vacancies, safe=False)
 
 def test_vac(request):
-    vac = Vacancy.objects.get(request.GET.get('vacancy_id'))
+    vac = Vacancy.objects.get(id=request.GET.get('vacancy_id'))
     return JsonResponse(model_to_dict(vac))
 
 def test(request, vacancy_id):
@@ -84,10 +84,10 @@ def complete_test(request):
     for key,val in rights_dict.items():
         rights_dict[key] = int(val / all_skills_dict[key]) * 100
     #points = int(rights / len(questions) * 100)
-    survey = Survey(vacancy=request.GET.get('vacancy_id'), user=request.user, )
+    survey = Survey(vacancy=Vacancy.objects.get(id=request.GET.get('vacancy_id')), user=request.user)
     survey.save()
-    #for key,val in rights_dict.items():
-
-
+    for key,val in rights_dict.items():
+        skill_point = SkillResult(skill=key, points=val, survey=survey)
+        skill_point.save()
 
     return JsonResponse(rights_dict, safe=False)
