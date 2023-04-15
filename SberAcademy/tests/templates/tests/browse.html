@@ -3,4 +3,28 @@
 {% block title %}Тесты{% endblock %}
 
 {% block content %}
+    <div class="task-content">
+        <div class="task-filter">
+        </div>
+        <div class="tasks-list">
+            <div class="tasks-sort">
+                <p>Название</p>
+                <p>Модуль</p>
+                <p>Сложность</p>
+                <p>Статус решения</p>
+            </div>
+            <div class="task">
+                <p id="task-name">Пятый поезд</p>
+                <p id="task-module">SQL</p>
+                <p id="task-difficulty" class="easy">Легко</p>
+                <p id="task-is-complete" class="done">Решено</p>
+            </div>
+            <div class="task">
+                <p id="task-name">Пятый поезд</p>
+                <p id="task-module">SQL</p>
+                <p id="task-difficulty" class="easy">Легко</p>
+                <p id="task-is-complete" class="undone">Не решено</p>
+            </div>
+        </div>
+    </div>
 {% endblock %}
