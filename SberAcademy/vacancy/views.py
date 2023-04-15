@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Vacancy
+from .models import Vacancy, Survey, SkillResult
 from tests.models import Test, Question
 from django.http import JsonResponse, HttpResponse
 from django.forms.models import model_to_dict
@@ -64,10 +64,14 @@ def complete_test(request):
                 rights_dict[q.skill] = 1
             else:
                 rights_dict[q.skill] += 1
-    print(rights_dict)
-    print(all_skills_dict)
+
     for key,val in rights_dict.items():
         rights_dict[key] = int(val / all_skills_dict[key]) * 100
     #points = int(rights / len(questions) * 100)
-    print(rights_dict)
+    survey = Survey(vacancy=request.GET.get('vacancy_id'), user=request.user, )
+    survey.save()
+    #for key,val in rights_dict.items():
+
+
+
     return JsonResponse(rights_dict, safe=False)
