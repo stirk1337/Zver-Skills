@@ -3,8 +3,9 @@ from django.contrib.auth.models import User
 from tests.models import Test
 
 class Vacancy(models.Model):
+    name = models.CharField(max_length=250, default='')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=250)
+    employeer = models.CharField(max_length=250)
     description = models.CharField(max_length=250, default='')
     company = models.CharField(max_length=250, default='ЗВЕР')
     city = models.CharField(max_length=250, default='Зверебург')

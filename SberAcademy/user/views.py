@@ -66,4 +66,7 @@ def get_notifications(request):
 def get_user_profile(request):
     user = User.objects.get(id=request.GET.get('user_id'))
     profile = user.useraccount_set.all()[0]
-    return JsonResponse(model_to_dict(profile))
+    profile_dict = model_to_dict(profile)
+    profile_dict['name'] = user.get_full_name()
+    profile_dict['login'] = user.username
+    return JsonResponse(profile_dict)
