@@ -392,6 +392,7 @@ p{
 
 .vacancy-blok p{
     margin-top: 26px;
+    font-size: 25px;
 }
 
 .search-filter{
@@ -524,8 +525,40 @@ p{
     font-weight: bold;
 }
 
-.vacancy-owner{
-    
+.vacancy-owner, .city{
+    color: rgba(0, 0, 0, 0.44);
+}
+
+.vacancy .description{
+    font-weight: bold;
+}
+
+.vacancy .skills{
+    font-weight: bold;
+}
+
+.vacancy-blok .search{
+    margin-left: 390px;
+}
+
+.skills-filter span{
+    border-radius: 50px;
+    padding: 6px;
+}
+
+#python{
+    background: #686937;
+    color: #EDF06B;
+}
+
+#csharp{
+    background: #701F72;
+    color: #CC00FF;
+}
+
+#sql{
+    background: #9DB8E1;
+    color: #0500FF;
 }
 
 .hidden{
