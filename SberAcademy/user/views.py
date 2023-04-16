@@ -35,16 +35,29 @@ def get_surveys(request):
 def delete_survey(request):
     survey = Survey.objects.get(id=request.GET.get('survey_id'))
     survey.delete()
+    notifi = Notification(user=survey.user, message='Вас отклонили на вакансию ' + survey.vacancy.name)
+    notifi.save()
     return HttpResponse('Успешно')
+
+def accept_survey(request):
+    survey = Survey.objects.get(id=request.GET.get('survey_id'))
+    survey.delete()
+    notifi = Notification(user=survey.user, message='Вас одобрили на вакансию ' + survey.vacancy.name)
+    notifi.save()
+    return HttpResponse('Успешно')
+    
 
 def mentor_survey(request):
     survey = Survey.objects.get(id=request.GET.get('survey_id'))
     user = User.objects.get(id=2)
     #print(user)
-    notifi = Notification(user=user, message='Вам предложено менторство ' + survey.user)
+    notifi = Notification(user=user, message='Вам предложено менторство пользователя ' + survey.user)
+    notifi.save()
+    notifi = Notification(user=survey.user, message='Вам предложили ментора ' + user)
     notifi.save()
     return HttpResponse('Успешно')
 
 def get_notifications(request):
     notifications = request.user.notification_set.all()
-    print(notifications())
+    notifi = list(notifications.values())
+    return JsonResponse(notifi, safe=False)
