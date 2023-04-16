@@ -35,7 +35,7 @@ function GetVacancies(){
         flex.append(place)
         let owner = $("<div class='vacancy-owner'></div>")
         owner.append($("<p></p>").text("Работодатель:"))
-        owner.append($("<p></p>").text(element.name))
+        owner.append($("<p></p>").text(element.employeer))
         flex.append(owner)
         description.append(flex)
         description.append($("<p class='description'></p>").text(element.description))
