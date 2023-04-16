@@ -682,6 +682,11 @@ p{
     font-size: 17px;
 }
 
+.mark p, .mark{
+    font-size: 50px;
+    text-align: center;
+    margin-top: 50px;
+}
 
 .hidden{
     display: none;
