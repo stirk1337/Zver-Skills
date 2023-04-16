@@ -55,10 +55,6 @@ p{
     color: #209F38;
 }
 
-.logo{
-    margin-top: 4px;
-}
-
 .header-nav a, .header-user p, .header-user a{
     font-size: 25px;
     color: black;
@@ -425,6 +421,7 @@ p{
 .vacancy-name p{
     font-size: 32px;
     color: #17AE1D;
+    font-weight: bold;
     margin: 0;
 }
 
@@ -438,7 +435,8 @@ p{
 }
 
 .vacancy-body{
-    margin-top: 50px;
+    font-size: 25px;
+    margin-top: 39px;
     display: flex;
     justify-content: space-between;
 }
@@ -484,6 +482,50 @@ p{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+
+.profile{
+    font-size: 25px;
+    width: 742px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.header-profile{
+    display: flex;
+}
+
+.header-profile p{
+    margin-right: 20px;
+}
+
+.profile-flex{
+    display: flex;
+}
+
+.profile-flex img{
+    width: 255px;
+    height: 255px;
+    margin-left: 91px;
+}
+
+.profile .login, .profile .fio, .profile .number, .profile .description{
+    background: rgba(217, 217, 217, 0.33);
+    padding: 5px;
+    border-radius: 9px;
+}
+
+.profile .group{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.company{
+    font-weight: bold;
+}
+
+.vacancy-owner{
+    
 }
 
 .hidden{

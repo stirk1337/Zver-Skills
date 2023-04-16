@@ -3,5 +3,23 @@
 {% block title %}Профиль {{ user }} {% endblock %}
 
 {% block content %}
-
+<div class="profile">
+    <div class="header-profile">
+        <p class="group">Работодатель</p>
+    </div>
+    <div class="profile-flex">
+        <div>
+            <p>Логин</p>
+            <p class="login">agentp3</p>
+            <p>ФИО</p>
+            <p class="fio">Нечаев Звергей Алексеевич</p>
+            <p>Контакты</p>
+            <p class="number">+7 (800) 555-35-35</p>
+        </div>
+        <img class="profile-logo" src="/static/img/big-user-logo.png">
+    </div>
+    <p>Описание</p>
+    <p class="description">Senior Analyst ZVERBank, ищу в свою команду опытных аналитиков или Data Scientists. Мой телеграм: @ksante69</p>
+</div>
+<script type="module" src="/static/js/profile.js"></script>
 {% endblock %}
