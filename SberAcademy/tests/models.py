@@ -5,7 +5,6 @@ class Test(models.Model):
     random = models.BooleanField(default=False)
     description = models.CharField(max_length=100, default='')
     skill = models.CharField(max_length=20)
-    
 
 class Question(models.Model):
     test = models.ForeignKey(Test, on_delete=models.CASCADE)
