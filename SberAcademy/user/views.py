@@ -35,7 +35,7 @@ def get_surveys(request):
 def delete_survey(request):
     survey = Survey.objects.get(id=request.GET.get('survey_id'))
     survey.delete()
-    notifi = Notification(user=survey.user, message='Вас отклонили на вакансию ' + survey.vacancy.name)
+    notifi = Notification(user=survey.user, message='Вас отклонили на вакансию ' + survey.vacancy.name, second_user_id=survey.vacancy.user.id)
     notifi.save()
     return HttpResponse('Успешно')
 
