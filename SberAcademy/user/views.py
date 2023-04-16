@@ -42,7 +42,7 @@ def delete_survey(request):
 def accept_survey(request):
     survey = Survey.objects.get(id=request.GET.get('survey_id'))
     survey.delete()
-    notifi = Notification(user=survey.user, message='Вас одобрили на вакансию ' + survey.vacancy.name)
+    notifi = Notification(user=survey.user, message='Вас одобрили на вакансию ' + survey.vacancy.name, second_user_id=survey.vacancy.user.id)
     notifi.save()
     return HttpResponse('Успешно')
     
@@ -51,9 +51,9 @@ def mentor_survey(request):
     survey = Survey.objects.get(id=request.GET.get('survey_id'))
     user = User.objects.get(id=2)
     #print(user)
-    notifi = Notification(user=user, message='Вам предложено менторство пользователя ' + survey.user)
+    notifi = Notification(user=user, message='Вам предложено менторство пользователя ' + survey.user, second_user_id=survey.user.id)
     notifi.save()
-    notifi = Notification(user=survey.user, message='Вам предложили ментора ' + user)
+    notifi = Notification(user=survey.user, message='Вам предложили ментора ' + user, second_user_id=user.id)
     notifi.save()
     return HttpResponse('Успешно')
 
