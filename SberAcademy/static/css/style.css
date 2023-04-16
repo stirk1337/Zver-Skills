@@ -444,6 +444,9 @@ p{
 }
 
 .uved-container{
+    overflow: scroll;
+    overflow-x:hidden;
+    overflow-y: auto;
     box-sizing: border-box;
     font-size: 20px;
     position: absolute;
@@ -465,6 +468,7 @@ p{
     box-sizing: border-box;
     width: 417px;
     margin: 0 auto;
+    margin-bottom: 10px;
     padding: 16px 2px 16px 2px;
     text-align: center;
     border: 1px solid #000000;
