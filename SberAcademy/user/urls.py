@@ -8,8 +8,7 @@ urlpatterns = [
     path('get_notifications', views.get_notifications),
     path('get_surveys', views.get_surveys),
     path('mentor_surveys', views.mentor_survey),
-    path('delete_survey', views.delete_survey)
-    
-    
+    path('delete_survey', views.delete_survey),
+    path('accept_survey', views.accept_survey)
     
 ]
