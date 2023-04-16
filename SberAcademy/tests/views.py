@@ -16,7 +16,7 @@ def test(request, test_id):
     test = Test.objects.get(id=test_id)
     return render(request, 'tests/test.html', {'test': test})
 
-def task(request):
+def task_view(request):
     return render(request, 'tests/task.html')
 
 def browse(request):

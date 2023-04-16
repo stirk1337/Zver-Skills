@@ -9,5 +9,5 @@ urlpatterns = [
     path('get_test', views.get_test),
     path('complete_test', views.complete_test),
     path('test/<int:test_id>', views.test),
-    path('task', views.task)
+    path('task', views.task_view)
 ]
