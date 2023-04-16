@@ -61,3 +61,9 @@ def get_notifications(request):
     notifications = request.user.notification_set.all()
     notifi = list(notifications.values())
     return JsonResponse(notifi, safe=False)
+
+
+def get_user_profile(request):
+    user = User.objects.get(id=request.GET.get('user_id'))
+    profile = user.useraccount_set.all()[0]
+    return JsonResponse(model_to_dict(profile))
