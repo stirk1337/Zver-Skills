@@ -41,3 +41,8 @@ function getTasks() {
         taskBlock.append(task) 
     });
 }
+
+$(document).on('click', '.task', function(e){
+    console.log('uwu')
+    window.location.replace('/test/task')
+})

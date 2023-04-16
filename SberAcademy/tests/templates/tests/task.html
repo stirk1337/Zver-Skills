@@ -3,5 +3,24 @@
 {% block title %} Задача {% endblock %}
 
 {% block content %}
-
+<div class="task-test">
+    <p class="open-task-name">A+B problem</p>
+    <p class='todo'>Напишите код для решения задачи</p>
+    <div class="code-pole">
+        <textarea class="code"></textarea>
+        <button class="submit">Отправить</button>
+    </div>
+    <div class="results">
+        <div class="wrong">
+            <p>A+B problem</p>
+            <p>time: 0.17s</p>
+            <p class="hard">WA</p>
+        </div>
+        <div class="correct">
+            <p>A+B problem</p>
+            <p>time: 0.17s</p>
+            <p class="easy">OK</p>
+        </div>
+    </div>
+</div>
 {% endblock %}

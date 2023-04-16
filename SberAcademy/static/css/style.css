@@ -561,6 +561,128 @@ p{
     color: #0500FF;
 }
 
+.task-test{
+    box-sizing: border-box;
+    padding: 20px 20px 20px 20px;
+    font-size: 20px;
+}
+
+.open-task-name, .todo{
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+.code-pole{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.task-test .code{
+    display: block;
+    width: 1000px;
+    height: 250px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.task-test .submit{
+    width: 100px;
+    height: 25px;
+    margin-top: 20px;
+    display:block;
+    margin-left: auto;
+    
+}
+
+.wrong, .correct{
+    box-sizing: border-box;
+    justify-content: space-between;
+    height: 47px;
+    display: flex;
+    padding: 14px 57px 14px 57px;
+    border-bottom: 1px solid #D0D0CE;
+}
+
+.login-form{
+    display: inline-block;
+    width: 654px;
+    height: 389px;
+    background: #FFFFFF;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 33px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    padding: 38px 97px 38px 97px;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.login-form .logo{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    width: 212px;
+    margin-bottom: 15px;
+}
+
+.login-form p{
+    margin: 0;
+    margin-bottom: 7px;
+}
+
+.login-form input{
+    margin-bottom: 11px;
+    width: 461px;
+    height: 34px;
+    border-radius: 6px;
+    background-color: white;
+    font-size: 18px;
+    color: #333333;
+    border: 1px solid #AEAEAE;
+    padding: 6px 0 6px 34px;
+}
+
+.login-form .submit{
+    font-weight: 600;
+    font-size: 25px;
+    color: white;
+    width: 135px;
+    height: 34px;
+    background: #17AE1D;
+    border-radius: 33px;
+    padding: 2px 26px 2px 26px;
+    margin-top: 37px;
+    margin-left: 163px;
+    border: none;
+}
+
+.icon-login{
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    padding: 4px 0 4px 8px;
+}
+
+.icon-lock{
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    padding: 7px 0 7px 8px;
+}
+
+.login-form span{
+    font-weight: 300;
+    font-size: 17px;
+}
+
+
 .hidden{
     display: none;
 }
